@@ -1,0 +1,21 @@
+-1,"MANAGING A DENTAL PRACTICE: THE GENGHIS KHAN WAY","author1",1,-2
+-1, "How to avoid Huge ships", "author1",1,-2
+-1, "The Stray Shopping Carts of Eastern North America","author2",1,-2
+-1, "Extreme Ironing","Phil Shaw",1,-2
+-1,"Why Cats Paint","Heather Busch",1,-2
+-1, "Pets with Tourette’s","Mark Leigh",1,-2
+-1,"Old Tractors and the Men Who Love Them","Roger Welsch",1,-2
+-1,"Be Bold With Bananas","Crescent Books",1,-2
+-1,"Bombproof Your Horse","Rick Pelicano",1,-2
+-1,"FASHION CATS","author1",1,-2
+-1,"HOW TO DISSAPPEAR COMPLETELY AND NEVER BE FOUND","author1",1,-2
+-1,"SUN-BEAMS MAY BE EXTRACTED FROM CUCUMBERS BUT THE PROCESS IS TEDIOUS", "author1",1,-2
+-1,"KNITTING WITH DOG HAIR","author1",1,-2
+-1,"HOW TO TEACH PHYSICS TO YOUR DOG","author1",1,-2
+-1,"MANIFOLD DESTINY:GUIDE TO COOKING ON YOUR CAR ENGINE!","author1",1,-2
+-1,"THE BEST FENCES","author1",1,-2
+-1,"HOW TO LAND A TOP-PAYING PIEROGI MAKERS JOB","author1",1,-2
+-1,"THE NEW RADIATION RECIPE BOOK","author1",1,-2
+-1,"GOBLINPROOFING ONES CHICKEN COOP","author1",1,-2
+-1,"THE BOOK OF MARMALADE: ITS ANTECEDENTS ITS HISTORY","author1",1,-2
+-1,,,1,-2
