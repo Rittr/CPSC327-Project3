@@ -78,9 +78,10 @@ int saveBooks(std::vector<book> &books, const char* filename)
 	fstream booksToFile;
 	booksToFile.open(filename, ios::out | ios::binary | ios::trunc);
 	if (booksToFile.is_open()) {
-		for (int i = 0; i < books.size(); i++) {
+		for (int i = 0; i < books.size()-1; i++) {
 //			patronsToFile << patrons[i].patron_id << ",";
-			booksToFile << books[i].book_id << ","
+			//booksToFile << books[i].book_id << ","
+			booksToFile << i << ","  //this is hacky, fix when you can
 					<< books[i].title << ","
 					<< books[i].author << ","
 					<< books[i].state << ","

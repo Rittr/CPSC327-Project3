@@ -13,12 +13,22 @@ using namespace std;
 //NOTE: also make sure you save patron and book data to disk any time you make a change to them
 //NOTE: for files where data is stored see constants.h BOOKFILE and PATRONFILE
 
+//should I load data now?
+vector<book> books;
+vector<patron> patrons;
+
+
 /*
  * clear books and patrons containers
  * then reload them from disk 
  */
 void reloadAllData(){
 
+		books.clear();
+		patrons.clear();
+
+		loadBooks(books, BOOKFILE.c_str());
+		loadPatrons(patrons, PATRONFILE.c_str());
 }
 
 /* checkout a book to a patron
@@ -42,6 +52,11 @@ void reloadAllData(){
  *         TOO_MANY_OUT patron has the max number of books allowed checked out
  */
 int checkout(int bookid, int patronid){
+	//if (books.size() < 1)
+	loadBooks(books, BOOKFILE.c_str());
+	loadPatrons(patrons, PATRONFILE.c_str());
+
+
 	return SUCCESS;
 }
 
