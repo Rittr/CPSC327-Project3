@@ -33,7 +33,7 @@ int loadBooks(std::vector<book> &books, const char* filename)
 			istringstream ss(line);
 
 			getline(ss, substr, ',');
-//			nextBook.book_id = substr;
+//			nextBook.book_id = stoi(substr);
 			getline(ss, substr, ',');
 			nextBook.title = substr;
 			getline(ss, substr, ',');
