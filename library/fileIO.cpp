@@ -23,7 +23,7 @@ int loadBooks(std::vector<book> &books, const char* filename)
 		book_checkout_state state;
 		int loanerID;
 
-		//int numLine = 0;
+		int numLine = 0;
 		string line;
 		string substr;
 		while (!fileToBooks.eof()) {
@@ -33,31 +33,23 @@ int loadBooks(std::vector<book> &books, const char* filename)
 			istringstream ss(line);
 
 			getline(ss, substr, ',');
-//			nextBook.book_id = stoi(substr);
+			nextBook.book_id = atoi(substr.c_str());
 			getline(ss, substr, ',');
 			nextBook.title = substr;
 			getline(ss, substr, ',');
 			nextBook.author = substr;
 			getline(ss, substr, ',');
-			//stateInt = stoi(substr);
-//			nextBook.state = book_checkout_state(stateInt);
-			nextBook.state = IN;
+			stateInt = atoi(substr.c_str());
+			nextBook.state = book_checkout_state(stateInt);
+			//nextBook.state = IN;
 			getline(ss, substr);
-//			nextBook.loaned_to_patron_id = stoi(substr);
 
-			//fileToBooks >> bookID >> title >> author >> state >> loanerID;
-
-//			nextBook.book_id = bookID;
-//			nextBook.title = title;
-//			nextBook.author = author;
-//			nextBook.state = state;
-//			nextBook.loaned_to_patron_id = loanerID;
+			nextBook.loaned_to_patron_id = atoi(substr.c_str());
 
 			books.push_back(nextBook);
-
 //			ss >> bookID >> title >> author >> state >> loanerID;
 		}
-		if (books.size() < 1) {
+		if (books.size() <= 1) {
 			return NO_BOOKS_IN_LIBRARY;
 		}
 		return SUCCESS;
@@ -79,9 +71,8 @@ int saveBooks(std::vector<book> &books, const char* filename)
 	booksToFile.open(filename, ios::out | ios::binary | ios::trunc);
 	if (booksToFile.is_open()) {
 		for (int i = 0; i < books.size()-1; i++) {
-//			patronsToFile << patrons[i].patron_id << ",";
-			//booksToFile << books[i].book_id << ","
-			booksToFile << i << ","  //this is hacky, fix when you can
+			booksToFile << books[i].book_id << ","
+//			booksToFile << i << ","  //this is hacky, fix when you can
 					<< books[i].title << ","
 					<< books[i].author << ","
 					<< books[i].state << ","
@@ -108,8 +99,19 @@ int loadPatrons(std::vector<patron> &patrons, const char* filename)
 	fileToPatrons.open(filename, ios::in);
 	if (fileToPatrons.is_open()) {
 		string line;
+		string substr;
+		patron nextPatron;
 		while (!fileToPatrons.eof()) {
 			getline(fileToPatrons, line);
+
+			istringstream ss(line);
+
+			getline(ss, substr, ',');
+			nextPatron.patron_id = atoi(substr.c_str());
+			getline(ss, substr, ',');
+			nextPatron.name = substr;
+			getline(ss, substr);
+			nextPatron.number_books_checked_out = atoi(substr.c_str());
 			//patrons << line;
 			//I'll probably have to be more specific about where this line is going
 		}

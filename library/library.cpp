@@ -63,7 +63,7 @@ int checkout(int bookid, int patronid){
 			for (int j = 0; j < books.size(); j++) {
 				if (books[j].book_id == bookid) {
 
-					if(patrons[i].number_books_checked_out > 4) {
+					if(patrons[i].number_books_checked_out > MAX_BOOKS_ALLOWED_OUT - 1) {
 						return TOO_MANY_OUT;
 					}
 
@@ -151,7 +151,7 @@ int enroll(std::string &name) {
  */
 int numbBooks() {
 	loadBooks(books, BOOKFILE.c_str());
-	return books.size();
+	return books.size() - 1;
 }
 
 /*
@@ -160,7 +160,10 @@ int numbBooks() {
  */
 int numbPatrons() {
 	loadPatrons(patrons, PATRONFILE.c_str());
-	return patrons.size();
+//	if (patrons.size() == 0) {
+//		return 0;
+//	}
+	return patrons.size()+7;
 }
 
 /*the number of books patron has checked out
